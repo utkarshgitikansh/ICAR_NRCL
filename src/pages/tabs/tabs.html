@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar padding-top>
+        <ion-toolbar padding-top="8px">
+            <ion-buttons left>
+                <button ion-button (click)="start()">
+                    <img src="../../assets/icon/logo.png" height="40">
+                </button>
+            </ion-buttons>
+
+            <ion-title class="app_title">ICAR - NRCL</ion-title>
+
+            <ion-buttons right class="site_logo">
+                <button ion-button (click)="start()">
+                    <img src="../../assets/icon/logo-ICAR.png" height="40">
+                </button>
+            </ion-buttons>
+
+        </ion-toolbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-fab class="fabButton">
+    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <ion-fab-list side="top">
+        <button ion-fab (click)="start()"> <ion-icon name=add></ion-icon> </button>
+        <button ion-fab (click)="start()"> <ion-icon name=add></ion-icon> </button>
+    </ion-fab-list>
+</ion-fab>
+
+<ion-tabs>
+    <ion-tab [root]="home" tabTitle="Home"></ion-tab>
+    <ion-tab [root]="updates" tabTitle="Updates"></ion-tab>
+    <ion-tab [root]="research" tabTitle="Research"></ion-tab>
+    <ion-tab [root]="publication" tabTitle="Publication"></ion-tab>
+    <ion-tab [root]="contact" tabTitle="Contact"></ion-tab>
+</ion-tabs>

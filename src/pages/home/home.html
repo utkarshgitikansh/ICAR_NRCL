@@ -1,14 +1,100 @@
 <ion-header>
+
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <ion-title>Home</ion-title>
+
   </ion-navbar>
+
 </ion-header>
 
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
+
+    <ion-card padding-top>
+
+    <ion-slides autoplay="500" loop="true" speed="500" class="slides" pager="true">
+
+        <ion-slide>
+            <img src="../../assets/imgs/slide1.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide2.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide4.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide5.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide6.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide7.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide8.jpg" center>
+        </ion-slide>
+        <ion-slide>
+            <img src="../../assets/imgs/slide10.jpg" center>
+        </ion-slide>
+
+    </ion-slides>
+
+
+  </ion-card>
+
+
+  <p class="site_heading">
+    {{home_text_1}}
   </p>
+  <p class="site_heading">
+    {{home_text_2}}
+  </p>
+
+
+  <!-- The Institute -->
+
+
+  <ion-card (click)="start()">
+
+    <img src="../../assets/imgs/home_1.jpg" center>
+
+    <ion-card-header>
+      {{home_text_3}}
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        {{home_text_4}}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+
+
+
+  <!-- Director's Message -->
+
+
+  <ion-card>
+
+    <img src="../../assets/imgs/home_2.jpg" center>
+
+    <ion-card-header>
+      {{home_text_5}}
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <p>
+        {{home_text_6}}
+      </p>
+
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
