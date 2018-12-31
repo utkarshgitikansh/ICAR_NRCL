@@ -20,6 +20,8 @@ $app-direction: ltr;
 
 @import "ionic.globals";
 
+
+
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
@@ -85,3 +87,6 @@ text-align: center;
 
   height: 25 px;
 }
+
+@import "theme-light";
+@import "theme-dark";

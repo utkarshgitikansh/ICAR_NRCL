@@ -17,20 +17,22 @@
 
         </ion-toolbar>
     </ion-navbar>
+    
 </ion-header>
 
+
 <ion-fab class="fabButton">
-    <button ion-fab mini><ion-icon name="add"></ion-icon></button>
+    <button ion-fab mini><ion-icon name="settings"></ion-icon></button>
     <ion-fab-list side="top">
-        <button ion-fab (click)="start()"> <ion-icon name=add></ion-icon> </button>
-        <button ion-fab (click)="start()"> <ion-icon name=add></ion-icon> </button>
+        <button ion-fab (click)="dayMode()"> <ion-icon name=sunny></ion-icon> </button>
+        <button ion-fab (click)="nightMode()"> <ion-icon name=moon></ion-icon> </button>
     </ion-fab-list>
 </ion-fab>
 
 <ion-tabs>
-    <ion-tab [root]="home" tabTitle="Home"></ion-tab>
-    <ion-tab [root]="updates" tabTitle="Updates"></ion-tab>
-    <ion-tab [root]="research" tabTitle="Research"></ion-tab>
-    <ion-tab [root]="publication" tabTitle="Publication"></ion-tab>
-    <ion-tab [root]="contact" tabTitle="Contact"></ion-tab>
+    <ion-tab [root]="home" tabIcon="home" tabTitle="Home"></ion-tab>
+    <ion-tab [root]="updates" tabIcon="flash" tabTitle="Updates"></ion-tab>
+    <ion-tab [root]="research" tabIcon="laptop" tabTitle="Research"></ion-tab>
+    <ion-tab [root]="publication" tabIcon="paper" tabTitle="Publication"></ion-tab>
+    <ion-tab [root]="contact" tabIcon="contacts" tabTitle="Contact"></ion-tab>
 </ion-tabs>

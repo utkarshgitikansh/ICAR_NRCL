@@ -11,6 +11,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PublicationPage } from '../pages/publication/publication';
 import { UpdatesPage } from '../pages/updates/updates';
 import { ResearchPage } from '../pages/research/research';
+import { SettingProvider } from '../providers/setting/setting';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ResearchPage } from '../pages/research/research';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SettingProvider
   ]
 })
 export class AppModule {}

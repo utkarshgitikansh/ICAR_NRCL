@@ -7,6 +7,7 @@ import { PublicationPage } from '../publication/publication';
 import { UpdatesPage } from '../updates/updates';
 import { ResearchPage } from '../research/research';
 import { StatusBar } from '@ionic-native/status-bar';
+import { SettingProvider } from '../../providers/setting/setting';
 
 /**
  * Generated class for the TabsPage page.
@@ -28,10 +29,16 @@ export class TabsPage {
   publication = PublicationPage;
   contact = ContactPage;
  
-  constructor(private alertCtrl: AlertController, public navCtrl: NavController, private statusBar: StatusBar){
+
+  selectedTheme: String;
+  
+
+
+  constructor(private alertCtrl: AlertController, public navCtrl: NavController, private statusBar: StatusBar, private setting: SettingProvider){
 
     this.statusBar.overlaysWebView(true);
     this.statusBar.backgroundColorByHexString('#ffffff'); 
+   
 
   }
 
@@ -44,6 +51,18 @@ export class TabsPage {
     });
     alert.present();
     //this.navCtrl.push();
+  }
+
+  nightMode(){
+
+    this.setting.activeTheme = "theme-dark";
+
+  }
+
+  dayMode(){
+
+    this.setting.activeTheme = "theme-light";
+
   }
 
 }
