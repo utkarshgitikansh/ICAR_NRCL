@@ -31,14 +31,43 @@
   <!-- Notice Board -->
 
 
-  <ion-card (click)="start()">
+  <!-- <ion-card (click)="start()"> -->
+  <ion-card>
 
     <ion-card-header>
       Notice Board
     </ion-card-header>
 
     <ion-card-content>
-      Blah ! Blah ! 
+
+<!-- 
+              <ion-list *ngFor = "let item of notice.entries()">
+        
+                  <ion-item>
+                      <ion-label>{{item[0]}}</ion-label>
+                  </ion-item>
+            
+              </ion-list> -->
+
+              <ion-list  *ngFor = "let item of notice.entries()" >
+                  <ion-item>
+
+                    <a href={{item[1]}}>{{item[0]}}</a>
+                 
+          
+                  </ion-item>   
+                  
+                
+                </ion-list>
+      
+                <!-- <a href={{notices}} target="_top">
+                    <ion-label>Mega Man X</ion-label>
+                 </a>
+                 <a href={{notices}} target="_top">
+                    <ion-label>Mega Man X</ion-label>
+                 </a> -->
+                
+      
     </ion-card-content>
 
   </ion-card>
