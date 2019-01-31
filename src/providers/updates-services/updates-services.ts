@@ -22,4 +22,22 @@ getNotices(){
 
     }
 
+getNews(){
+   
+      return this.http.get(`https://icarserver.herokuapp.com/news`).map(res =>res.json()); 
+  
+    }
+
+getTenders(){
+  
+      return this.http.get(`https://icarserver.herokuapp.com/tenders`).map(res =>res.json()); 
+  
+}
+
+getRecruits(){
+  
+  return this.http.get(`https://icarserver.herokuapp.com/recruitments`).map(res =>res.json()); 
+
+}
+
 }

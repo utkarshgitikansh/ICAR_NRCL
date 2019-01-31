@@ -15,6 +15,7 @@ import { ResearchPage } from '../pages/research/research';
 import { SettingProvider } from '../providers/setting/setting';
 import { UpdatesServicesProvider } from '../providers/updates-services/updates-services';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +25,7 @@ import { UpdatesServicesProvider } from '../providers/updates-services/updates-s
     PublicationPage,
     UpdatesPage,
     ResearchPage
+
   ],
   imports: [
     BrowserModule,

@@ -7,28 +7,12 @@
 </ion-header>
 
 
-<ion-content padding >
 
-
-  <!-- Tenders -->
-
-
-  <ion-card (click)="start()">
-
-    <ion-card-header>
-      Tenders
-    </ion-card-header>
-
-    <ion-card-content>
-      
-        Blah ! Blah !
-      
-    </ion-card-content>
-
-  </ion-card>
-
-
-  <!-- Notice Board -->
+<ion-content padding class="update_content">
+   
+    <ion-spinner class="spinnerCenter" *ngIf="!Nstatus"></ion-spinner>
+ 
+    <!-- Notice Board -->
 
 
   <!-- <ion-card (click)="start()"> -->
@@ -37,72 +21,108 @@
     <ion-card-header>
       Notice Board
     </ion-card-header>
-
-    <ion-card-content>
-
-<!-- 
-              <ion-list *ngFor = "let item of notice.entries()">
-        
-                  <ion-item>
-                      <ion-label>{{item[0]}}</ion-label>
-                  </ion-item>
-            
-              </ion-list> -->
+    
+    <ion-card-content *ngIf="Nstatus">
 
               <ion-list  *ngFor = "let item of notice.entries()" >
                   <ion-item>
 
-                    <a href={{item[1]}}>{{item[0]}}</a>
+                    <a href={{item[1]}} class = "a">{{item[0]}}</a>
                  
           
                   </ion-item>   
                   
                 
                 </ion-list>
-      
-                <!-- <a href={{notices}} target="_top">
-                    <ion-label>Mega Man X</ion-label>
-                 </a>
-                 <a href={{notices}} target="_top">
-                    <ion-label>Mega Man X</ion-label>
-                 </a> -->
-                
+
       
     </ion-card-content>
 
   </ion-card>
+  
+  <!-- News and Events -->
+
+
+  <ion-card>
+
+      <ion-card-header>
+        News and Events
+      </ion-card-header>
+  
+      <ion-card-content *ngIf="Nestatus">
+  
+          <ion-list  *ngFor = "let item of news.entries()" >
+              <ion-item>
+  
+                <a href={{item[1]}} class = "a">{{item[0]}}</a>
+             
+      
+              </ion-item>   
+              
+            
+            </ion-list>
+  
+  
+  </ion-card-content>
+  
+    </ion-card>
+  
+  
+  
+   <!-- Tenders -->
+
+
+   <ion-card >
+
+      <ion-card-header>
+        Tenders
+      </ion-card-header>
+  
+      <ion-card-content *ngIf="Tstatus">
+  
+          <ion-list  *ngFor = "let item of tenders.entries()" >
+              <ion-item>
+  
+                <a href={{item[1]}} class = "a">{{item[0]}}</a>
+             
+      
+              </ion-item>   
+              
+            
+            </ion-list>
+  
+  
+  </ion-card-content>
+  
+    </ion-card>
 
 
   <!-- Recruitment -->
 
 
-  <ion-card (click)="start()">
+  <ion-card >
 
-    <ion-card-header>
-      Recruitment
-    </ion-card-header>
-
-    <ion-card-content>
-      Blah ! Blah !
-    </ion-card-content>
-
-  </ion-card>
-
-
-  <!-- News and Events -->
-
-
-  <ion-card (click)="start()">
-
-    <ion-card-header>
-      News and Events
-    </ion-card-header>
-
-    <ion-card-content>
-      Blah ! Blah !
-    </ion-card-content>
-
-  </ion-card>
+      <ion-card-header>
+        Recruitments
+      </ion-card-header>
+  
+      <ion-card-content *ngIf="Rstatus">
+  
+          <ion-list  *ngFor = "let item of recruit.entries()" >
+              <ion-item>
+  
+                <a href={{item[1]}} class = "a">{{item[0]}}</a>
+             
+      
+              </ion-item>   
+              
+            
+            </ion-list>
+  
+  
+  </ion-card-content>
+  
+    </ion-card>
 
 
   <!-- Upcoming Events -->
@@ -115,7 +135,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      Blah ! Blah !
+       Uploading ...
     </ion-card-content>
 
   </ion-card>
@@ -131,7 +151,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      Blah ! Blah !
+        Uploading ...
     </ion-card-content>
 
   </ion-card>
@@ -147,7 +167,7 @@
     </ion-card-header>
 
     <ion-card-content>
-      Blah ! Blah ! 
+        Uploading ...
     </ion-card-content>
 
   </ion-card>
