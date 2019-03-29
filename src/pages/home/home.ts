@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
@@ -8,7 +8,7 @@ import { AlertController } from 'ionic-angular';
   selector: 'page-home',
   templateUrl: 'home.html',
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
 
 // Home page text control area
@@ -24,6 +24,8 @@ home_text_8 = "Indian Council of Agricultural Research"
 
 constructor(private alertCtrl: AlertController, public navCtrl: NavController){}
 
+ngOnInit() {
+}//End of ngOnInit
 
 start(){
   let alert = this.alertCtrl.create({

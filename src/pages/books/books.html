@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Books</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="update_content">
+  <ion-spinner class="spinnerCenter" *ngIf="!Bstatus"></ion-spinner>
+
+  <!-- <ion-card (click)="start()"> -->
+  <ion-card>
+    <ion-card-header style="font-weight: bold">
+      {{ author }}
+    </ion-card-header>
+
+    <ion-card-content *ngIf="Bstatus" text-wrap>
+      <ion-list *ngFor="let item of books; let i = index">
+        <ion-item> {{ i + 1 }}.{{ item }} </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
