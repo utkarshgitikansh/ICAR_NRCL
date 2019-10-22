@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
+import { HomeProvider } from '../../providers/home/home';
 
 
 @IonicPage()
@@ -22,18 +23,45 @@ home_text_6 = "Litchi is an important fruit crop of the country with tremendous 
 home_text_7 = "भारतीय कृषि अनुसंधान परिषद  (Indian Council of Agricultural Research)"
 home_text_8 = "Indian Council of Agricultural Research"
 
-constructor(private alertCtrl: AlertController, public navCtrl: NavController){}
+staff_name = [];
+staff_image = [];
+staff_desig = [];
+staff_mail = [];
+staff_mail2 = [];
+Sstatus = false;
+
+constructor(private alertCtrl: AlertController, public navCtrl: NavController, private homeProvider : HomeProvider){}
 
 ngOnInit() {
-}//End of ngOnInit
 
-start(){
-  let alert = this.alertCtrl.create({
-    title: 'ICAR-NRCL',
-    subTitle: 'We believe in litchi!!',
-    buttons: ['Close']
-  });
-  alert.present();
-    }
+this.homeProvider.getStaff().subscribe(info => {
+  let staff_length = info["name"].length;
+
+  for (let i = 0; i < staff_length; i++) {
+    this.staff_name.push(info["name"][i]);
+    this.staff_image.push(info["image"][i]);
+    this.staff_desig.push(info["desig"][i]);
+
+  }
+
+  // for (let i = 0; i < staff_length; i+2) {
+  //   this.staff_mail.push(info["mail"][i]);
+  //   this.staff_mail2.push(info["mail"][i+1]);
+  // }
+ console.log(this.staff_name);
+  this.Sstatus = true;
+
+});//End of ngOnInit
+
+// start(){
+//   let alert = this.alertCtrl.create({
+//     title: 'ICAR-NRCL',
+//     subTitle: 'We believe in litchi!!',
+//     buttons: ['Close']
+//   });
+//   alert.present();
+//     }
+
+}
 
 }

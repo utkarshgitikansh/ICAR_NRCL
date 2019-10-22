@@ -39,5 +39,22 @@ getRecruits(){
   return this.http.get(`https://icarserver.herokuapp.com/recruitments`).map(res =>res.json()); 
 
 }
+getEvents(){
+  
+  return this.http.get(`https://icarserver.herokuapp.com/upcoming`).map(res =>res.json()); 
+
+}
+
+getLinks(){
+  
+  return this.http.get(`https://icarserver.herokuapp.com/links`).map(res =>res.json()); 
+
+}
+
+getCorners(){
+  
+  return this.http.get(`https://icarserver.herokuapp.com/corners`).map(res =>res.json()); 
+
+}
 
 }

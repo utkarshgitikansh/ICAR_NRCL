@@ -16,6 +16,7 @@ import { SettingProvider } from "../providers/setting/setting";
 import { UpdatesServicesProvider } from "../providers/updates-services/updates-services";
 import { PublicationServicesProvider } from "../providers/publication-services/publication-services";
 import { BooksPage } from "../pages/books/books";
+import { HomeProvider } from '../providers/home/home';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { BooksPage } from "../pages/books/books";
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     SettingProvider,
     UpdatesServicesProvider,
-    PublicationServicesProvider
+    PublicationServicesProvider,
+    HomeProvider
   ]
 })
 export class AppModule {}

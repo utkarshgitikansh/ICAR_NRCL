@@ -27,6 +27,20 @@ export class UpdatesPage {
   recruit = new Map();
   Rstatus = false;
 
+  events_data = new Map();
+  event = new Map();
+  Estatus = false;
+
+
+  links_data = new Map();
+  link = new Map();
+  Lstatus = false;
+
+
+  corners_data = new Map();
+  corner = new Map();
+  Cstatus = false;
+
   constructor(public navCtrl: NavController, private updatesService : UpdatesServicesProvider) {
   }
 
@@ -133,6 +147,81 @@ export class UpdatesPage {
         this.Rstatus = true;
 
     });
+
+        // Uploading events
+
+        this.updatesService.getEvents().subscribe(info => {
+      
+          let events_length = info.event_name.length;   // half the number of notices 
+         
+          
+    
+          for (let i = 0; i < events_length; i = i+2) {
+            
+            //this.notice_name.push(info.notices_name[i]);
+            let name : String = info.event_name[i];
+            let url : String = info.event_name[i+1];
+            this.events_data.set(name,url);
+    
+            //console.log(this.notice_data.values)
+           
+            }
+            
+            this.event = this.events_data;
+            console.log(this.event);
+            this.Estatus = true;
+    
+        });
+
+          // Important Links
+
+          this.updatesService.getLinks().subscribe(info => {
+      
+            let links_length = info.link_name.length;   // half the number of notices 
+           
+            
+      
+            for (let i = 0; i < links_length; i = i+2) {
+              
+              //this.notice_name.push(info.notices_name[i]);
+              let name : String = info.link_name[i];
+              let url : String = info.link_name[i+1];
+              this.links_data.set(name,url);
+      
+              //console.log(this.notice_data.values)
+             
+              }
+              
+              this.link = this.links_data;
+              console.log(this.link);
+              this.Lstatus = true;
+      
+          });
+
+           // Important Links
+
+           this.updatesService.getCorners().subscribe(info => {
+      
+            let links_length = info.corner_name.length;   // half the number of notices 
+           
+            
+      
+            for (let i = 0; i < links_length; i = i+2) {
+              
+              //this.notice_name.push(info.notices_name[i]);
+              let name : String = info.corner_name[i];
+              let url : String = info.corner_name[i+1];
+              this.corners_data.set(name,url);
+      
+              //console.log(this.notice_data.values)
+             
+              }
+              
+              this.corner = this.corners_data;
+              console.log(this.corner);
+              this.Cstatus = true;
+      
+          });
 
   }
 

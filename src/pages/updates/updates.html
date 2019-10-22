@@ -74,37 +74,48 @@
 
   <!-- Upcoming Events -->
 
-  <ion-card (click)="start()">
+  <ion-card>
     <ion-card-header>
       Upcoming Events
     </ion-card-header>
 
-    <ion-card-content>
-      Uploading ...
+    <ion-card-content *ngIf="Estatus">
+      <ion-list *ngFor="let item of event.entries()">
+        <ion-item>
+          <a href="{{ item[1] }}" class="a">{{ item[0] }}</a>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
 
   <!-- Important Links -->
 
-  <ion-card (click)="start()">
+  <ion-card>
     <ion-card-header>
       Important Links
     </ion-card-header>
 
-    <ion-card-content>
-      Uploading ...
+    <ion-card-content *ngIf="Lstatus">
+      <ion-list *ngFor="let item of link.entries()">
+        <ion-item>
+          <a href="{{ item[1] }}" class="a">{{ item[0] }}</a>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
 
   <!-- Farmer's Corner -->
 
-  <ion-card (click)="start()">
+  <ion-card>
     <ion-card-header>
       Farmer's Corner
     </ion-card-header>
 
-    <ion-card-content>
-      Uploading ...
+    <ion-card-content *ngIf="Cstatus">
+      <ion-list *ngFor="let item of corner.entries()">
+        <ion-item>
+          <a href="{{ item[1] }}" class="a">{{ item[0] }}</a>
+        </ion-item>
+      </ion-list>
     </ion-card-content>
   </ion-card>
-</ion-content>

@@ -5,8 +5,9 @@
 </ion-header>
 
 <ion-content padding class="research_content" text-wrap>
-  <ion-spinner class="spinnerCenter" *ngIf="!Rstatus"></ion-spinner>
+  
   <ion-card>
+      <ion-spinner class="spinnerCenter" *ngIf="!Rstatus"></ion-spinner>
     <ion-card-header>
       <ion-card-title class="h5">NRCL - Research Papers :</ion-card-title>
     </ion-card-header>
@@ -17,4 +18,107 @@
       </ion-item>
     </ion-card-content>
   </ion-card>
+  
+  <ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!Bstatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - Bulletins :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="Bstatus" >
+      
+        <ion-item *ngFor="let a of bulletin_data; let i = index">
+            <a [href]="a" >
+              <img class="image" [src]="bulletin_name[i]">
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!Estatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - Extension Folder :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="Estatus" >
+      
+        <ion-item *ngFor="let a of extension_name; let i = index">
+            <a [href]="a" >
+             {{extension_data[i]}}
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!BUstatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - Books :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="BUstatus" >
+      
+        <ion-item *ngFor="let a of books_name; let i = index">
+            <a [href]="books_data[i]">
+                <img class="image" [src]="books_name[i]">
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+
+<ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!NEstatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - NewsLetters :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="NEstatus" >
+      
+        <ion-item *ngFor="let a of newsLetter_data; let i = index">
+            <a [href]="a" >
+                <img class="image" [src]="newsLetter_name[i]">
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!Pstatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - लिचीमा राजभाषा पत्रिका :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="Pstatus" >
+      
+        <ion-item *ngFor="let a of patrika_name; let i = index">
+            <a [href]="a">
+               {{patrika_data[i]}}
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+
+  <ion-card >
+      <ion-spinner class="spinnerCenter" *ngIf="!Astatus"></ion-spinner>
+    <ion-card-header>
+      <ion-card-title class="h5">NRCL - Archives :</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content *ngIf="Astatus" >
+      
+        <ion-item *ngFor="let a of archives_name; let i = index">
+            <a [href]="a">
+               {{archives_data[i]}}
+            </a>
+          </ion-item>
+        
+    </ion-card-content> 
+  </ion-card>
+  
 </ion-content>

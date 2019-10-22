@@ -98,4 +98,24 @@
 
   </ion-card>
 
+
+
+<ion-card *ngFor="let a of staff_name; let i = index">
+
+    <img [src]="staff_image[i]" center>
+
+    <ion-card-header>
+      {{staff_name[i]}}
+    </ion-card-header>
+
+    <ion-card-content>
+
+        {{staff_desig[i]}}
+        {{staff_mail[i]}}
+
+
+    </ion-card-content>
+
+  </ion-card>
+
 </ion-content>
