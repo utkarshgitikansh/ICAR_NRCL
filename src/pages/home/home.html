@@ -1,121 +1,96 @@
 <ion-header>
-
   <ion-navbar>
     <ion-title>Home</ion-title>
-
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
-
   <p class="site_heading">
-    {{home_text_7}}
+    {{ home_text_7 }}
   </p>
 
-  
-    <ion-card>
-
-    <ion-slides autoplay="500" loop="true" speed="500" class="slides" pager="true">
-
-        <ion-slide>
-            <img src="../../assets/imgs/slide1.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide2.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide4.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide5.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide6.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide7.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide8.jpg" center>
-        </ion-slide>
-        <ion-slide>
-            <img src="../../assets/imgs/slide10.jpg" center>
-        </ion-slide>
-
+  <ion-card>
+    <ion-slides
+      autoplay="500"
+      loop="true"
+      speed="500"
+      class="slides"
+      pager="true"
+    >
+      <ion-slide>
+        <img src="../../assets/imgs/slide1.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide2.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide4.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide5.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide6.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide7.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide8.jpg" center />
+      </ion-slide>
+      <ion-slide>
+        <img src="../../assets/imgs/slide10.jpg" center />
+      </ion-slide>
     </ion-slides>
-
-
   </ion-card>
 
   <p class="site_heading">
-    {{home_text_1}}
+    {{ home_text_1 }}
   </p>
   <p class="site_heading">
-    {{home_text_2}}
+    {{ home_text_2 }}
   </p>
-
 
   <!-- The Institute -->
 
-
   <ion-card (click)="start()">
-
-    <img src="../../assets/imgs/home_1.jpg" center>
+    <img src="../../assets/imgs/home_1.jpg" center />
 
     <ion-card-header>
-      {{home_text_3}}
+      {{ home_text_3 }}
     </ion-card-header>
 
     <ion-card-content>
-
-        {{home_text_4}}
-      
+      {{ home_text_4 }}
     </ion-card-content>
-
   </ion-card>
-
-
 
   <!-- Director's Message -->
 
-
   <ion-card>
-
-    <img src="../../assets/imgs/home_2.jpg" center>
+    <img src="../../assets/imgs/home_2.jpg" center />
 
     <ion-card-header>
-      {{home_text_5}}
+      {{ home_text_5 }}
     </ion-card-header>
 
     <ion-card-content>
-
-        {{home_text_6}}
-
+      {{ home_text_6 }}
     </ion-card-content>
-
   </ion-card>
-
-
-
-<ion-card *ngFor="let a of staff_name; let i = index">
-
-    <img [src]="staff_image[i]" center>
+  <br />
+  <h2>ICAR : Staff</h2>
+  <br />
+  <ion-card *ngFor="let a of staff_name; let i = index">
+    <img [src]="staff_image[i]" center />
 
     <ion-card-header>
-      {{staff_name[i]}}
+      {{ staff_name[i] }}
     </ion-card-header>
 
     <ion-card-content>
-
-        {{staff_desig[i]}}
-        {{staff_mail[i]}}
-
-
+      {{ staff_desig[i] }}
+      {{ staff_mail[i] }}
     </ion-card-content>
-
   </ion-card>
-
 </ion-content>
